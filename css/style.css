@@ -1,5 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter&family=Josefin+Sans&display=swap");
 
+:root {
+  --templateColor1: #fbfafe;
+  --templateColor2: #35414b;
+  --templateColor3: #ffffff;
+  --templateColor4: #794cff;
+  --templateColor5: #343e45;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -7,18 +15,19 @@
 body {
   font-family: "Inter", Arial, Helvetica, sans-serif;
   font-size: 16px;
-  color: #35414b;
+  color: var(--templateColor2);
   line-height: 1.5;
   position: relative;
 }
+
 .ellipse {
   position: absolute;
   width: 3128px;
   height: 3128px;
   left: -820px;
   top: -1940px;
-  background: #fbfafe;
-  border: 1px solid #f0ebfa;
+  background: var(--templateColor1);
+  border: 1px solid var(--templateColor1);
   border-radius: 50%;
   z-index: -200;
 }
@@ -26,6 +35,7 @@ body {
 h1 {
   font-size: 64px;
 }
+
 h2 {
   font-size: 40px;
 }
@@ -38,8 +48,6 @@ h2 {
   font-family: "Josefin Sans", Arial, Helvetica, sans-serif;
 }
 
-/* NAv menu here */
-
 .navMenu {
   display: flex;
   justify-content: space-between;
@@ -49,7 +57,7 @@ h2 {
 }
 
 .navMenuItems a {
-  color: #35414b;
+  color: var(--templateColor2);
   margin: 0 15px;
 }
 .logoCompany {
@@ -66,25 +74,25 @@ h2 {
 }
 .logIn a {
   margin: 0 10px;
-  color: #794cff;
+  color: var(--templateColor4);
 }
-.burger {
+.burger,
+.benefits {
   display: none;
 }
 
-/* promo class */
 .promo {
   padding: 20px;
   position: relative;
   margin: 20px;
 }
 .promo a {
-  color: #35414b;
+  color: var(--templateColor2);
 }
 
 .promo a:first-child {
   background: #81c43b;
-  color: #ffffff;
+  color: var(--templateColor3);
   padding: 8px 10px;
   border-radius: 100px;
   position: absolute;
@@ -103,40 +111,42 @@ h2 {
   z-index: -1;
 }
 
-/* about class */
-
 .about {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
 }
+
 .about h1 {
   margin: 20px 0;
   width: 760px;
 }
+
 .about p {
   width: 520px;
   margin: 15px 0;
 }
+
 input {
   width: 320px;
   border: 1px solid #e1e5ea;
   padding: 18px 99px 18px 24px;
 }
+
 input::placeholder {
   color: #97a5b5;
   font-size: 16px;
 }
+
 .try {
-  background: #794cff;
-}
-.try a {
-  margin: 18px 45px;
-  color: #ffffff;
+  background: var(--templateColor4);
 }
 
-/* Block Make your work easier */
+.try a {
+  margin: 18px 45px;
+  color: var(--templateColor3);
+}
 
 .tools {
   display: grid;
@@ -145,6 +155,7 @@ input::placeholder {
   grid-gap: 20px 30px;
   padding: 60px 15%;
 }
+
 .tools h2 {
   grid-column: 1 / 4;
   justify-self: center;
@@ -206,10 +217,6 @@ input::placeholder {
   margin: 10px 0;
 }
 
-.benefits {
-  display: none;
-}
-/* Why customers love working with us */
 .withUs {
   display: flex;
   flex-direction: column;
@@ -218,9 +225,11 @@ input::placeholder {
   font-size: 18px;
   padding: 60px 15%;
 }
+
 .withUs h2 {
   margin: 0 25%;
 }
+
 .descr {
   margin: 30px 0;
   width: 50%;
@@ -238,25 +247,28 @@ input::placeholder {
   object-fit: cover;
   margin: 15px;
 }
+
 .userInfo {
   text-align: left;
   margin: 0 10px;
 }
+
 .userInfo p:first-of-type {
   font-weight: bold;
 }
+
 .users {
   width: 100%;
   padding: 0 30px;
   justify-content: space-between;
 }
+
 .user {
   align-items: center;
   position: relative;
   padding: 15px 0;
   font-size: 16px;
 }
-/* rffect */
 
 .user::before,
 .user::after {
@@ -269,30 +281,30 @@ input::placeholder {
 .user:hover::before,
 .user:hover::after {
   width: 100%;
-  border: 4px solid #35414b;
+  border: 4px solid var(--templateColor2);
 }
-
-/* Footer here */
 
 footer {
   background: #1d2830;
   font-size: 14px;
   padding: 30px 0;
-  border-top: 1px solid #343e45;
+  border-top: 1px solid var(--templateColor5);
 }
+
 .footerContent {
   padding: 0 15%;
 }
 
 footer,
 footer a {
-  color: #ffffff;
+  color: var(--templateColor3);
 }
 
 .reserved {
   display: flex;
   align-items: center;
 }
+
 .footerContent,
 .social {
   display: flex;
@@ -303,23 +315,31 @@ footer a {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #343e45;
+  background: var(--templateColor5);
   width: 32px;
   height: 32px;
   border-radius: 50%;
   margin: 0 10px;
 }
+
 .socialIcon a {
   font-size: 17px;
 }
 
-/* Page conforms to layout at 500px screen width */
+/* Page conforms(?) to layout at 500px screen width */
 @media screen and (max-width: 1170px) {
   .navMenuItems,
   .logIn,
-  .promo a:first-child {
+  .promo a:first-child,
+  .tool:nth-child(4),
+  .tool:nth-child(5),
+  .tool:nth-child(6),
+  .user:nth-child(2),
+  .user:nth-child(3),
+  .social {
     display: none;
   }
+
   .navMenu {
     padding: 60px 8%;
   }
@@ -333,24 +353,29 @@ footer a {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: #35414b;
+    color: var(--templateColor2);
   }
+
   .burger {
     font-size: 8px;
   }
+
   .bars {
     font-size: 26px;
   }
+
   .bars i {
-    color: #35414b;
+    color: var(--templateColor2);
   }
+
   h1 {
     font-size: 32px;
   }
+
   h2 {
     font-size: 18px;
   }
-  /* promo class */
+
   .promo {
     padding: 20px;
     margin: 20px;
@@ -361,6 +386,7 @@ footer a {
     padding: 8px;
     left: 30%;
   }
+
   .try {
     display: flex;
     flex-direction: column;
@@ -371,17 +397,21 @@ footer a {
   .try a {
     display: block;
     margin: 18px 45px;
-    color: #ffffff;
+    color: var(--templateColor3);
   }
 
   input {
     width: 100%;
-    border: 1px solid #e1e5ea;
     padding: 18px;
   }
-  input::placeholder {
+
+  input::placeholder,
+  .tools,
+  .withUs,
+  .userInfo {
     text-align: center;
   }
+
   .about h1,
   .about p {
     width: 80%;
@@ -393,63 +423,54 @@ footer a {
     grid-template-columns: 1fr;
     grid-gap: 20px 0;
     padding: 30px 15%;
-    text-align: center;
     align-items: center;
   }
+
   .tools h2 {
     grid-column: 1 / 2;
   }
+
   .tool {
     display: flex;
     flex-direction: column;
     align-items: center;
-  }
-  .tool:nth-child(4),
-  .tool:nth-child(5),
-  .tool:nth-child(6) {
-    display: none;
   }
 
   .benefits {
     display: flex;
     background: #ece5ff;
     justify-content: center;
+    height: 52px;
+    border-radius: 5px;
   }
 
   .benefits a {
+    width: 100%;
     color: #7259fa;
-    margin: 18px 85px;
+    margin: 15px 0;
   }
-  /* Why customers love working with us */
+
   .withUs {
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: center;
     font-size: 18px;
     padding: 60px 15%;
   }
+
   .withUs h2 {
     margin: 0;
   }
+
   .descr {
     width: 100%;
-  }
-
-  .user:nth-child(2),
-  .user:nth-child(3),
-  .social {
-    display: none;
-  }
-
-  .userInfo {
-    text-align: center;
   }
 
   .users {
     width: 100%;
     justify-content: center;
   }
+
   .user {
     align-items: center;
   }
