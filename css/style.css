@@ -18,6 +18,7 @@ body {
   color: var(--templateColor2);
   line-height: 1.5;
   position: relative;
+  overflow-x: hidden;
 }
 
 .ellipse {
@@ -211,7 +212,7 @@ input::placeholder {
   margin: 15px 0;
 }
 
-.tool p:first-of-type {
+.tool h3 {
   font-weight: bold;
   font-size: 18px;
   margin: 10px 0;
@@ -326,8 +327,137 @@ footer a {
   font-size: 17px;
 }
 
-/* Page conforms(?) to layout at 500px screen width */
-@media screen and (max-width: 1170px) {
+@media screen and (max-width: 1200px) {
+  .navMenuItems,
+  .logIn,
+  .promo a:first-child,
+  .benefits,
+  .user:nth-child(2) {
+    display: none;
+  }
+
+  .navMenu {
+    padding: 60px 8%;
+  }
+
+  .logoCompany {
+    font-size: 24px;
+  }
+
+  .burger {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--templateColor2);
+  }
+
+  .burger {
+    font-size: 8px;
+  }
+
+  .bars {
+    font-size: 26px;
+  }
+
+  .bars i {
+    color: var(--templateColor2);
+  }
+
+  .promo {
+    display: flex;
+    justify-content: center;
+    position: static;
+    padding: 20px;
+    margin: 20px;
+  }
+
+  .promo a:nth-child(2) {
+    position: static;
+    border-radius: 100px;
+    padding: 8px;
+  }
+  h1 {
+    font-size: clamp(32px, 6vw, 64px);
+  }
+
+  .about h1 {
+    width: 80%;
+  }
+
+  .try {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 70%;
+  }
+
+  .try a {
+    display: block;
+    margin: 18px 45px;
+    color: var(--templateColor3);
+  }
+
+  input {
+    width: 100%;
+    padding: 18px;
+  }
+
+  input::placeholder,
+  .tools,
+  .withUs,
+  .userInfo {
+    text-align: center;
+  }
+
+  .tools {
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px 0;
+    padding: 30px 15%;
+    align-items: center;
+  }
+
+  .tools h2 {
+    grid-column: 1 / 3;
+  }
+
+  .tool {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .withUs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 18px;
+    padding: 60px 15%;
+  }
+
+  .withUs h2 {
+    margin: 0;
+  }
+
+  .descr {
+    width: 100%;
+  }
+
+  .user {
+    align-items: center;
+  }
+
+  .ellipse {
+    width: 1473px;
+    height: 1473px;
+    left: -200px;
+    top: -400px;
+  }
+}
+
+@media screen and (max-width: 700px) {
   .navMenuItems,
   .logIn,
   .promo a:first-child,
@@ -341,11 +471,7 @@ footer a {
   }
 
   .navMenu {
-    padding: 60px 8%;
-  }
-
-  .logoCompany {
-    font-size: 20px;
+    padding: 30px 8%;
   }
 
   .burger {
@@ -377,14 +503,17 @@ footer a {
   }
 
   .promo {
+    display: flex;
+    justify-content: center;
+    position: static;
     padding: 20px;
     margin: 20px;
   }
 
   .promo a:nth-child(2) {
+    position: static;
     border-radius: 100px;
     padding: 8px;
-    left: 30%;
   }
 
   .try {
